@@ -38,3 +38,57 @@ In line with the diagram provided, we're setting up a Domain Controller with two
 - For the external-facing NIC, ensure it acquires its IP address from your home router. This establishes the connection to the broader internet. Meanwhile, the internal NIC requires a specific setup to connect with the Windows 10 virtual machine within the internal network.<br>
 - By configuring these network settings, you create a dual-network environment, allowing your Domain Controller to efficiently manage both internet connectivity and internal network communication with the Windows 10 VM.<br>
 
+![5](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/61ba058f-f4b1-41a8-b7b8-5d3516e2356b)
+
+- Now, open the "Network & Internet" settings, navigate to "Ethernet," and click on "Change adapter settings." In this section, you will find your two network interface cards (NICs). <br>
+- One of these NICs is designated for the internet connection, while the other is for the internal network. Identify and review these adapters to ensure they correspond to the intended configurations. This step allows you to verify that both network adapters are recognized by the system and are ready for further configuration. <br>
+- Remember, the external-facing NIC should be associated with your home router to access the internet, while the internal NIC is set up for communication within the internal network, particularly with the Windows 10 virtual machine. <br>
+
+![6](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/bc183ad0-1968-491b-b3e2-27567b266523)
+
+let's proceed with identifying and labeling the network adapters:
+- __Identify the Main Network (External-Facing NIC):__ Check the IP address associated with this network adapter. It should be obtained dynamically from your home router.Rename this network connection to "Internet" to clearly indicate its role as the connection to the external network. <br>
+- __Identify the Internal Network (Internal-Facing NIC):__ Confirm that this network adapter is set up with a static IP address for the internal network.Rename this network connection to "Intranet" to signify its function as the internal communication channel within your network. <br>
+
+By labeling the network adapters as "Internet" and "Intranet," you're providing a clear and intuitive representation of their respective roles in connecting to the broader internet and facilitating internal network communication.<br>
+
+![7](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/2f6c1dde-28f9-4131-a2b6-a9c8b46ce500)
+
+Once that is complete, the next step is to add Active Directory Domain Services as a feature to the server through the Server Manager. <br>
+1. Open Server Manager. <br>
+2. Navigate to "Add Roles and Features." <br>
+3. Proceed with the on-screen instructions by selecting "Next" and "Next" again. <br>
+__Server Selection:__
+4. Choose your server for the installation. <br>
+5. Select "Active Directory Domain Services" as the Role. <br>
+6. Continue with "Next," "Next," and "Next." <br>
+__Finally:__
+7. Click on "Install" to initiate the installation process. <br>
+By following these steps, you'll seamlessly integrate Active Directory Domain Services into the server configuration. <br>
+
+![8](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/e1a38ee1-b808-4d40-9df2-0cd07f1a0fed)
+
+continue the setup by selecting "Add a new forest" and follow these steps: <br>
+- In the wizard, choose "Add a new forest." <br>
+- Specify a generic root domain name; for instance, use "mydomain.com." <br>
+- Proceed to the next step by clicking "Next." <br>
+- This configuration will set up a new forest with the specified root domain name. Following these instructions will help establish the foundation for your Active Directory environment. <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
