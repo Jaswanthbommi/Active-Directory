@@ -84,10 +84,14 @@ After a quick restart, I accessed the newly created Active Directory to set up a
 You will add your user to the admin group. Click on "Admin," then go to "New" and select "User." Enter the desired username and password. After setting up the user account, log out of the current user and attempt to log in with the newly created credentials. <br>
 Now that the first Domain Admin user is established, log out and log into the server using this new user account. This user will have administrative privileges within the Active Directory domain.<br>
 
+![13](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/25b2aee7-b06b-4308-aa8d-0aa9ca2d0464)
 
 #### This should be Steve rogers i accidentally took screenshot of this 
 
+The next crucial step is to promote the Active Directory (AD) to a Domain Controller. This action transforms the server into a central hub that all client computers will access to connect to the internet. This promotion establishes a hierarchical and organized structure within the network, ensuring efficient communication and access for all connected devices.<br>
+![14](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/ce9bb0ab-e0a6-4e26-ad77-1382689507f4)
 
+## Now to the Second Part of RAS / NAT / DHCP
 
 
 
