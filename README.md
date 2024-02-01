@@ -79,7 +79,7 @@ continue the setup by selecting "Add a new forest" and follow these steps: <br>
 
 After a quick restart, I accessed the newly created Active Directory to set up a new Organizational Unit (OU), which we named "_ADMINS." Following the creation of this OU, a new user was added under this specific OU. This step ensures a well-organized structure within Active Directory, making user management more efficient and structured. <br>
 
-![11](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/4f782f60-6d07-49c4-883a-3a27a3fb1de3)
+![12](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/dd4099cb-bc6c-40e1-a76c-122449708b92)
 
 You will add your user to the admin group. Click on "Admin," then go to "New" and select "User." Enter the desired username and password. After setting up the user account, log out of the current user and attempt to log in with the newly created credentials. <br>
 Now that the first Domain Admin user is established, log out and log into the server using this new user account. This user will have administrative privileges within the Active Directory domain.<br>
@@ -93,11 +93,26 @@ The next crucial step is to promote the Active Directory (AD) to a Domain Contro
 
 ## Now to the Second Part of RAS / NAT / DHCP
 
+![15](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/3ef9f94d-c803-4991-b49a-b5ddb2e759f8)
 
+Following that, the next step involves setting up the Remote Access Server (RAS) and Network Address Translator (NAT). This configuration empowers the client computer, once it's configured, to access the internet through the Domain Controller. By implementing RAS and NAT, you establish a seamless connection for client devices to utilize the internet resources while maintaining a secure and centralized network environment through the Domain Controller.
 
+![16](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/8306b7f7-1195-43bc-9fd5-801f381eb51c)
 
+To set up the Remote Access Server (RAS) and Network Address Translator (NAT), follow these steps: <br>
+1. Open "Add Roles & Features" and proceed by selecting "Next." <br>
+2. In the "Roles" section, check "Remote Access" and continue with "Next." <br>
+3. On the "Select Role Services" page, check "Routing," and additional features, such as "Remote Access Service (RAS)," will automatically be selected. Click "Next" to proceed. <br>
+4. Follow the prompts until the installation is complete and then close the wizard. <br>
+Now, access the tools by going to "Routing and Remote Access": <br>
+1. Right-click on the Domain Controller. <br>
+2. Choose "Configure and Enable Routing and Remote Access." <br>
+3. In the configuration wizard, select NAT (Network Address Translator). <br>
+4. If no network interfaces show up, close the window and open it again. <br>
+5. Choose the "INTERNET" interface and complete the configuration. <br>
+By following these steps, you enable remote access and NAT, allowing client computers to access the internet through the Domain Controller. <br>
 
-
+![17](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/8d2d34d2-32be-4ba3-ad50-5b044362449a)
 
 
 
