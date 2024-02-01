@@ -114,11 +114,123 @@ By following these steps, you enable remote access and NAT, allowing client comp
 
 ![17](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/8d2d34d2-32be-4ba3-ad50-5b044362449a)
 
+To set up the Remote Access Server (RAS) and Network Address Translator (NAT), follow these steps: <br>
+1. Navigate to "Add Roles & Features" and proceed to the next steps in the wizard until you reach the "Roles" section. <br>
+2. In the "Roles" section, check "Remote Access" and proceed to the next steps in the wizard. <br>
+3. On the "Select Role Services" page, check "Routing," and additional features such as "Remote Access Service (RAS)" will be automatically selected. Click "Next" to proceed. <br>
+4. Follow the prompts until the installation is complete, and then close the wizard. <br>
+Now, go to "Tools" and select "Routing and Remote Access." <br>
+1. Right-click on the Domain Controller. <br>
+2. Choose "Configure and Enable Routing and Remote Access." <br>
+3. In the configuration wizard, select NAT (Network Address Translator). <br>
+4. If no network interfaces show up, close the window and open it again. <br>
+5. Select the "INTERNET" interface and complete the configuration. <br>
+By following these steps, you enable remote access and NAT, allowing the client computer, once set up, to access the internet through the Domain Controller. <br>
+
+![18](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/c5ed141a-f522-42ec-8e53-501da0bf8c1b)
+
+Now, proceed to configure DHCP (Dynamic Host Configuration Protocol) by following these steps: <br>
+1. Click on "dc.mydomain" and check "IPv4." <br>
+2. In the DHCP management console, create an IP address scope for the users. <br>
+3. Set the DHCP IP address scope to 172.16.0.100-200. This range will allow for the assignment of new IP addresses to devices within your network. <br>
+By establishing this DHCP IP address scope, you ensure that devices connecting to your network will be dynamically assigned IP addresses within the specified range, facilitating efficient and automated network configuration. <br>
+
+![19](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/071be4af-89e9-4e9c-8458-73f183a655c4)
+
+![20](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/aafd4c75-e5bc-4e95-8412-a67f56d3d007)
+
+Now, disable the Enhanced Security Configuration and download the PowerShell script for creating 1000 users from the GitHub repository. <br>
+1. __Disable Enhanced Security Configuration:__ <br>
+ - Depending on your browser, go to the settings or options. <br>
+ - Find and disable Enhanced Security Configuration. <br>
+ - Save changes and restart the browser. <br>
+2. __Download PowerShell Script:__ <br>
+ - Visit the GitHub repository containing the PowerShell script. <br>
+ - Click on the provided link, and the script will automatically download. <br>
+3. __Extract Files:__ <br>
+ - Once downloaded, extract the contents of the file. You should now have two files: a PowerShell script for creating users and a "names.txt" file containing a list of names.
+4. __Modify Names.txt:__ <br>
+ - Open the "names.txt" file. <br>
+ - Add your first name to the list, ensuring it's in a format compatible with the script. <br>
+Now, you're ready to execute the PowerShell script, creating users in your Active Directory based on the names in the modified "names.txt" file. <br>
+
+![21](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/d3f12dfc-9664-472c-a65f-e12993c403a4)
+
+Now, open PowerShell as an administrator and execute the script: <br>
+- Right-click on the PowerShell icon. <br>
+- Select "Run as Administrator" to open PowerShell with elevated privileges. <br>
+- Once PowerShell is open, navigate to the directory where you saved the PowerShell script. Execute the script by typing its name and pressing Enter. <br>
+![23](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/77797e82-ba28-4e14-9c79-8a3efb999f74)
+
+ now we have to run the script but we have to make sure the names.txt file is in the same place as the code so now <br>
+- Use the cd command to change the directory to where the script is located. Replace "C:\Path\To\Your\Script\Directory" with the actual path where your script is located <br>
+
+![24](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/5cdfebc6-f622-4f95-a343-ec8faaf4814f)
+
+Voila! Running the script successfully creates the 1000 users in your Active Directory. The PowerShell script has processed the information from the "names.txt" file, and the users are now set up and ready for use 
+
+![25](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/30e30e63-1d52-418d-87cd-71292dbc2914)
+
+Now to Check the users <br>
+- __Open Server Manager:__ Launch Server Manager on your Windows Server. <br>
+- __Access Local Server Information:__ In Server Manager, look for the "Local Server" tab on the left side. <br>
+- __Check Active Directory Users:__ Within the "Local Server" information, there should be a section related to Active Directory. Click on the task link that typically says "Tools" or "Manage." <br>
+- __Open Active Directory Users and Computers:__ In the "Tools" or "Manage" section, look for "Active Directory Users and Computers" and open it. <br>
+- __Verify User Creation:__ Navigate to the Organizational Unit (OU) where you created the users, such as "_ADMINS."Check if the users have been successfully created. You should see the 1000 users listed in this OU. <br>
+
+By going through these steps, you can confirm that the script has effectively created the users within your Active Directory. If you encounter any issues or have further questions, feel free to ask! <br>
 
 
+![26](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/ce7cfb85-fbfd-4373-aa99-68d6e07c4984)
+
+### Now we need to change to Windows 10
+- __Open Windows 10 VM:__ Launch your Windows 10 Enterprise VM in Oracle VirtualBox. <br>
+- __Join the Domain:__ Navigate to "System" settings on the Windows 10 VM.Join the Windows 10 VM to the domain you set up earlier. Use the domain credentials to complete the joining process. <br>
+- __Log in with New User:__ After joining the domain, log out or restart the Windows 10 VM.Log back in using the credentials of one of the newly created users. <br>
+- __Verify User Access:__ Check if the user can successfully log in and access the resources within the domain. <br>
+
+![27](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/4879cb43-b720-4285-8d43-7f2ed5503b6a)
+
+__Now to change the Computer Name:__
+- __Change the Computer Name:__ On the Windows 10 VM, right-click on the "This PC" icon on the desktop or in File Explorer. Select "Properties" to open the System properties. Click on the "Change settings" link next to the computer name. Click the "Change" button, enter the new computer name "CLIENT," and click "OK." <br>
+- __Restart the VM:__ You may be prompted to restart the VM. If not, go ahead and restart it manually. <br>
+- __Join the Domain Again (if needed):__ After restarting, you might need to join the domain again with the updated computer name. Follow the steps mentioned earlier for joining the domain.  <br>
+- __Log in with New User:__ Log in to the "CLIENT" VM using the credentials of one of the newly created users.  <br>
+
+![28](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/1cd045b2-1bc8-48b0-86ec-77cee2508e90)
+
+#### click on you don't have product key and proceed with the next steps.
+
+![29](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/8914b4fb-73a4-47a5-a127-aa743b130fd8)
+
+- __Check Network Configuration on Windows 10 CLIENT VM:__ Open a Command Prompt on the CLIENT VM.Type the following command and press Enter:cmdCopy codeipconfigThis will display the network configuration details, including IP address, subnet mask, and default gateway. <br>
+- __Change DHCP Server Options - Router (Option 003):__ Open the DHCP management console on your Windows Server.Navigate to the DHCP server and expand it.Right-click on "Server Options" and select "Configure Options."Look for "003 Router" in the list of options.Change the value to the desired default gateway IP address. Click "Apply" or "OK" to save the changes. <br>
+
+By checking the network configuration on the CLIENT VM, you can verify that it has received the correct IP address and gateway information from the DHCP server. Changing the DHCP server options ensures that the correct default gateway is assigned to the connected devices on the network. <br>
+
+![30](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/0886524d-6228-43e6-94fc-ad5037d20b15)
+
+Let's change the computer name and join the Windows 10 CLIENT VM to the domain "mydomain. com". Follow these steps:
+1. __Change Computer Name:__ Right-click on the "This PC" icon on the desktop or in File Explorer. Select "Properties" to open the System properties. Click on the "Change settings" link next to the computer name. Click the "Change" button, enter the new computer name (e.g., "CLIENT"), and click "OK."You may be prompted to restart the computer. If not, restart the VM manually.
+2. __Join the Domain:__ After restarting, go back to the System properties. Click on the "Change" button next to the domain settings.Enter "mydomain. com" in the "Member of" field. Click "OK" and provide domain credentials when prompted.Restart the VM if required.
+3. __Verify Domain Join:__ After restarting, log in to the Windows 10 CLIENT VM using domain credentials.Verify that the computer is now a member of the. "mydomain. com" domain.
+
+![31](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/3ab9a491-5c24-4c52-94d8-c9bc72fe1e14)
+
+Let's verify that the IP address assigned to the Windows 10 CLIENT VM matches the one listed in the DHCP address leases on the Domain Controller. Here are the steps: <br>
+1. __Go to DHCP Address Leases on DC:__ On the Domain Controller, open the DHCP management console.Navigate to the DHCP server, expand it, and click on "Address Leases." <br>
+2. __Check Assigned IP Address:__ Look for the lease assigned to the Windows 10 CLIENT VM. The hostname or IP address should match the one you configured or received dynamically. <br>
+3. __Verify IP Address on Windows 10 CLIENT VM:__ On the Windows 10 CLIENT VM, open a Command Prompt.IPCONFIG <br>
+4.Check the "IPv4 Address" in the output to ensure it matches the IP address listed in the DHCP address leases on the DC. <br>
+
+By comparing the DHCP address leases on the DC with the actual IP address assigned to the Windows 10 CLIENT VM, you can verify that the DHCP server is correctly assigning IP addresses to devices on the network. If there's a match, it confirms successful communication and configuration <br>
 
 
+![32](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/912665a9-669c-4bb9-b4c2-d179b24a97fb)
 
+Let's check the username on the Windows 10 CLIENT VM using the whoami command. Follow these steps: <br>
+1. __Open Command Prompt on CLIENT VM:__ On the Windows 10 CLIENT VM, open a Command Prompt. <br>
+2. __Run whoami Command:__ Type the following command and press Enter: whoami <br>
+3. __Verify Username:__ Check the output to verify that the username matches the ones you added using the PowerShell script. <br>
 
-
-
+By running whoami, you can confirm the username associated with the current user context on the Windows 10 CLIENT VM. If everything is configured correctly, it should display the username you created using the PowerShell script. <br>
