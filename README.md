@@ -44,7 +44,8 @@ In line with the diagram provided, we're setting up a Domain Controller with two
 - One of these NICs is designated for the internet connection, while the other is for the internal network. Identify and review these adapters to ensure they correspond to the intended configurations. This step allows you to verify that both network adapters are recognized by the system and are ready for further configuration. <br>
 - Remember, the external-facing NIC should be associated with your home router to access the internet, while the internal NIC is set up for communication within the internal network, particularly with the Windows 10 virtual machine. <br>
 
-![6](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/bc183ad0-1968-491b-b3e2-27567b266523)
+
+![7](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/2f6c1dde-28f9-4131-a2b6-a9c8b46ce500)
 
 let's proceed with identifying and labeling the network adapters:
 - __Identify the Main Network (External-Facing NIC):__ Check the IP address associated with this network adapter. It should be obtained dynamically from your home router.Rename this network connection to "Internet" to clearly indicate its role as the connection to the external network. <br>
@@ -52,7 +53,7 @@ let's proceed with identifying and labeling the network adapters:
 
 By labeling the network adapters as "Internet" and "Intranet," you're providing a clear and intuitive representation of their respective roles in connecting to the broader internet and facilitating internal network communication.<br>
 
-![7](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/2f6c1dde-28f9-4131-a2b6-a9c8b46ce500)
+![8](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/e1a38ee1-b808-4d40-9df2-0cd07f1a0fed)
 
 Once that is complete, the next step is to add Active Directory Domain Services as a feature to the server through the Server Manager. <br>
 1. Open Server Manager. <br>
@@ -66,7 +67,7 @@ __Finally:__
 7. Click on "Install" to initiate the installation process. <br>
 By following these steps, you'll seamlessly integrate Active Directory Domain Services into the server configuration. <br>
 
-![8](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/e1a38ee1-b808-4d40-9df2-0cd07f1a0fed)
+![9](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/285d9beb-eb4b-42d3-893e-e7efd0fbe5e9)
 
 continue the setup by selecting "Add a new forest" and follow these steps: <br>
 - In the wizard, choose "Add a new forest." <br>
@@ -74,7 +75,17 @@ continue the setup by selecting "Add a new forest" and follow these steps: <br>
 - Proceed to the next step by clicking "Next." <br>
 - This configuration will set up a new forest with the specified root domain name. Following these instructions will help establish the foundation for your Active Directory environment. <br>
 
+![10](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/c93b911c-0261-43fe-b885-aad6dad9541e)
 
+After a quick restart, I accessed the newly created Active Directory to set up a new Organizational Unit (OU), which we named "_ADMINS." Following the creation of this OU, a new user was added under this specific OU. This step ensures a well-organized structure within Active Directory, making user management more efficient and structured. <br>
+
+![11](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/4f782f60-6d07-49c4-883a-3a27a3fb1de3)
+
+You will add your user to the admin group. Click on "Admin," then go to "New" and select "User." Enter the desired username and password. After setting up the user account, log out of the current user and attempt to log in with the newly created credentials. <br>
+Now that the first Domain Admin user is established, log out and log into the server using this new user account. This user will have administrative privileges within the Active Directory domain.<br>
+
+
+#### This should be Steve rogers i accidentally took screenshot of this 
 
 
 
