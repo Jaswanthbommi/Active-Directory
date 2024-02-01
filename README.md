@@ -234,3 +234,22 @@ Let's check the username on the Windows 10 CLIENT VM using the whoami command. F
 3. __Verify Username:__ Check the output to verify that the username matches the ones you added using the PowerShell script. <br>
 
 By running whoami, you can confirm the username associated with the current user context on the Windows 10 CLIENT VM. If everything is configured correctly, it should display the username you created using the PowerShell script. <br>
+
+![33](https://github.com/Jaswanthbommi/Active-Directory/assets/62924828/597c7a43-38e0-4bbf-bf51-dda5ea203f8d)
+
+And there we have it, folks! That wraps up our lab session. We've successfully gone through the entire process – from setting up Active Directory on our Domain Controller to creating 1000 users using PowerShell. Now, as we check for other users on our Windows 10 CLIENT machine, we can confidently say that this lab is complete. If you have any questions or want to delve into more exciting IT adventures, feel free to ask. Happy exploring! <br>
+
+__Key take aways :__ 
+1. __Network Customization:__ Navigated through various settings, customizing IP addresses, and configuring network adapters to establish a well-structured network environment. <br>
+2. __Domain Setup:__ Successfully set up a domain, providing a centralized and organized platform for managing network resources. <br>
+3. __RAS/NAT Configuration:__ Configured the Remote Access Server (RAS) and Network Address Translator (NAT), enabling client computers to access the internet through the Domain Controller. <br>
+4. __PowerShell Scripting for User Creation:__ Actively utilized PowerShell scripting to create 1000 users, demonstrating proficiency in automating and optimizing user management tasks. <br>
+5. __Educational Journey:__ Engaged in a comprehensive learning journey, from downloading and setting up VMs to troubleshooting and optimizing user management in Active Directory. <br>
+6. __Skill Enhancement:__ Enhanced technical expertise by understanding the nuances of Active Directory, honing troubleshooting skills, and gaining hands-on experience in optimizing user management. <br>
+7. __Hands-on Troubleshooting:__ Applied a hands-on approach to troubleshooting, gaining valuable insights into resolving issues and optimizing network configurations. <br>
+8. __Continuous Learning:__ Recognized the project as a continuous learning experience, solidifying knowledge and skills in IT infrastructure and network administration. <br>
+
+Overall, this project has been a valuable journey in technology, providing practical insights into network administration, server configuration, and efficient user management. <br>
+
+
+
